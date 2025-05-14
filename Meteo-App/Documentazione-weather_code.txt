@@ -1,0 +1,4 @@
+Il parametro weather_code delle API di Open-Meteo rappresenta un codice numerico che descrive 
+il tipo di condizione meteorologica in un dato momento (per esempio il codice 0 rappresenta "sereno").
+Conoscendo questi codici e a cosa sono associati possiamo mostrare all'utente che condizione meteorologica
+c'è in un determinato luogo.
