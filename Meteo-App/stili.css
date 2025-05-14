@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+/* HEADER DEL SITO */
+header {
+    margin-bottom: 50px;
+}
+h1#title {
+    color: white;
+    font-size: 100px;
+    text-align: center;
+    padding: 20px;
+    background-color: #3390e0;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: auto;
+}
+
+/* CORPO DEL SITO */
+
+/* SEZIONE PICCOLA DESCRIZIONE */
+section#subtitle {
+    text-align: center;
+    font-size: 20px;
+    color: #0e4e86;
+    font-family: "Inter", sans-serif;
+    font-weight: 400px;
+    font-style: normal;
+}
+
+/* SPAZIO */
+div#spazio {
+    margin: 60px 0px 60px 0px;
+    height: 5px;
+    background-color: #3390e0;
+}
+
+
+/* Contenitore principale per i due div */
+#contenuto-pagina {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;          /* Spaziatura tra le colonne */
+    margin: 20px;
+}
+
+/* Colonna sinistra */
+#container-sx {
+    flex: 1;            /* Occupa metà dello spazio disponibile */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;          /* Spaziatura tra le sezioni */
+}
+
+/* Colonna destra */
+#container-dx {
+    flex: 1;            /* Occupa metà dello spazio disponibile */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;          /* Spaziatura tra le sezioni */
+}
+
+/* SEZIONE METEO POSIZIONE ATTUALE */
+section#attuale-posizione-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+    margin-top: 110px;
+}
+
+section#meteo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 60px;
+}
+p#attuale-posizione {
+    background-color: #ebebeb;
+    border-radius: 10px;
+    width: 500px;
+    padding: 10px;
+    text-align: center;
+    font-size: 30px;
+    color: #0e4e86;
+    font-family: "Inter", sans-serif;
+    font-weight: 400px;
+    font-style: normal;
+}
+
+
+/* SEZIONE RICERCA METEO */
+h3 {
+    text-align: center;
+    font-size: 30px;
+    color: #0e4e86;
+    font-family: "Inter", sans-serif;
+    font-weight: 400px;
+    font-style: normal;
+}
+form#ricerca-form {
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+}
+input.citta-input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+button#cerca-btn {
+    background-color: #3390e0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button#cerca-btn:hover {
+    background-color: #297bc4;
+}
+
+/* SEZIONE METEO CITTÀ RICERCATA */
+section#previsioni-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+p#risultato {
+    background-color: #ebebeb;
+    border-radius: 10px;
+    width: 500px;
+    padding: 10px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 30px;
+    color: #0e4e86;
+    font-family: "Inter", sans-serif;
+    font-weight: 400px;
+    font-style: normal;
+}
+
+
+/* POWERED BY LUCA LEONARDELLI */
+.abs-site-link {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    color: hsla(0, 0%, 1000%, .6);
+    font-size: 12px;
+    text-decoration: none;
+    color: #0e4e86;
+  }
