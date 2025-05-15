@@ -1,3 +1,4 @@
+/* Impostazioni di base per il body */
 body {
     margin: 0;
     padding: 0;
@@ -19,8 +20,6 @@ h1#title {
     font-style: normal;
     margin: auto;
 }
-
-/* CORPO DEL SITO */
 
 /* SEZIONE PICCOLA DESCRIZIONE */
 section#subtitle {
@@ -106,16 +105,14 @@ p.tempoGiro {
     float: right;
 }
 
-
-/* SPAZIO */
+/* SPAZIO tra le sezioni */
 div#spazio {
     margin: 60px 0px 60px 0px;
     height: 5px;
     background-color: white;
 }
 
-
-/* POWERED BY LUCA LEONARDELLI */
+/* Link autore in basso a destra */
 .abs-site-link {
     position: fixed;
     bottom: 10px;
@@ -124,4 +121,4 @@ div#spazio {
     font-size: 12px;
     text-decoration: none;
     color: white;
-  }
+}

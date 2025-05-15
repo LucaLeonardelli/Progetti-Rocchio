@@ -1,14 +1,22 @@
-let timerInterval; // Variabile per salvare l'intervallo
-let elapsedTime = 0; // Tempo trascorso in millisecondi
-let isRunning = false; // Stato del cronometro
-let giroCount = 0; // Contatore dei giri
+// Variabile per salvare l'intervallo del timer (setInterval)
+let timerInterval; 
 
-// Funzione per formattare il tempo in mm:ss:ms
+// Tempo trascorso in millisecondi
+let elapsedTime = 0; 
+
+// Stato del cronometro (true se in esecuzione, false se fermo)
+let isRunning = false; 
+
+// Contatore dei giri registrati
+let giroCount = 0; 
+
+// Funzione per formattare il tempo in formato mm:ss:ms
 function formatTime(ms) {
     const milliseconds = Math.floor((ms % 1000) / 10); // Millisecondi (2 cifre)
     const seconds = Math.floor((ms / 1000) % 60); // Secondi
     const minutes = Math.floor((ms / (1000 * 60)) % 60); // Minuti
 
+    // Formattazione con zero iniziale se necessario
     const formattedMilliseconds = milliseconds < 10 ? `0${milliseconds}` : milliseconds;
     const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
     const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
@@ -16,13 +24,13 @@ function formatTime(ms) {
     return `${formattedMinutes}:${formattedSeconds}:${formattedMilliseconds}`;
 }
 
-// Funzione per aggiornare il display
+// Aggiorna il display del cronometro con il tempo attuale
 function updateDisplay() {
     const timeDisplay = document.getElementById("time");
     timeDisplay.textContent = formatTime(elapsedTime);
 }
 
-// Funzione per avviare o fermare il cronometro
+// Avvia o ferma il cronometro a seconda dello stato attuale
 function toggleTimer() {
     const startStopButton = document.getElementById("startStopButton");
 
@@ -35,7 +43,7 @@ function toggleTimer() {
         startStopButton.style.backgroundColor = "#428a26"; // Cambia il colore del pulsante
     } else {
         // Avvia il cronometro
-        const startTime = Date.now() - elapsedTime;
+        const startTime = Date.now() - elapsedTime; // Calcola il tempo di partenza
         timerInterval = setInterval(() => {
             elapsedTime = Date.now() - startTime;
             updateDisplay();
@@ -46,7 +54,7 @@ function toggleTimer() {
     }
 }
 
-// Funzione per aggiungere un giro
+// Aggiunge un nuovo giro alla lista dei giri
 function addGiro() {
     if (!isRunning) return; // Non aggiungere giri se il cronometro è fermo
 
@@ -66,7 +74,7 @@ function addGiro() {
     containerGiri.appendChild(giroDiv);
 }
 
-// Funzione per resettare il cronometro
+// Resetta il cronometro e la lista dei giri
 function resetTimer() {
     clearInterval(timerInterval);
     timerInterval = null;
@@ -85,7 +93,7 @@ function resetTimer() {
     containerGiri.innerHTML = "";
 }
 
-// Aggiungi gli event listener ai pulsanti solo dopo che il DOM è pronto
+// Aggiunge gli event listener ai pulsanti solo dopo che il DOM è pronto
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("startStopButton").addEventListener("click", toggleTimer);
     document.getElementById("resetButton").addEventListener("click", resetTimer);

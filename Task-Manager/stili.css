@@ -1,9 +1,10 @@
+/* Stili di base per il body */
 body {
     margin: 0;
     padding: 0;
 }
 
-/* HEADER DEL SITO */
+/* Header con titolo */
 header {
     margin-bottom: 50px;
 }
@@ -19,9 +20,7 @@ h1#title {
     margin: auto;
 }
 
-/* CORPO DEL SITO */
-
-/* SEZIONE PICCOLA DESCRIZIONE */
+/* Sezione descrizione */
 section#subtitle {
     text-align: center;
     font-size: 20px;
@@ -30,7 +29,7 @@ section#subtitle {
     font-style: normal;
 }
 
-/* SEZIONE BARRA DI RICERCA */
+/* Barra di ricerca e filtro */
 section#searchbar {
     margin-top: 60px;
     text-align: center;
@@ -59,7 +58,7 @@ input#bottoneRicerca {
     font-style: normal;
     background-color: #5181e9;
     color: #fff;
-    margin-right: 10px; /* Aggiunge spazio tra Cerca e Filtra */
+    margin-right: 10px; /* Spazio tra Cerca e Filtra */
 }
 input#bottoneRicerca:hover {
     background-color: #3a5f9e;
@@ -85,14 +84,14 @@ input#filtroStato:hover {
     cursor: pointer;
 }
 
-/* spazio */
+/* Spazio grafico di separazione */
 div#spazio {
     margin: 60px 0px 60px 0px;
     height: 5px;
     background-color: #5181e9;
 }
 
-/* SEZIONE BOTTONE PER CREARE TASK */
+/* Bottone per aggiungere task */
 section#createTask {
     text-align: center;
 }
@@ -115,14 +114,13 @@ input#bottoneAggiungi:hover {
     cursor: pointer;
 }
 
-/* SEZIONE CARD CON ATTIVITA' */
+/* Sezione delle card attività */
 section#tasks {
     text-align: center;
     margin: 80px 100px 80px 100px;
-    
 }
 
-/* CARD */
+/* Card attività */
 .card {
     padding: 10px;
     display: flex;
@@ -172,9 +170,7 @@ hr {
     cursor: pointer;
 }
 
-/* Alcuni stili per i diversi modal */
-
-/* Modal crea e modifica */
+/* Modal crea e modifica attività */
 .modal-body {
     text-align: center;
 }
@@ -190,8 +186,7 @@ hr {
     margin: 0px;
 }
 
-
-/* POWERED BY LUCA LEONARDELLI */
+/* Link autore in basso a destra */
 .abs-site-link {
     position: fixed;
     bottom: 10px;
@@ -202,7 +197,7 @@ hr {
     color: #3a5f9e;
 }
 
-/* Effetto hover per i pulsanti */
+/* Effetto hover per i pulsanti principali */
 input#bottoneRicerca:hover, input#bottoneAggiungi:hover, input.task-button:hover, select#filtroStato:hover {
     transform: scale(1.05);
     transition: transform 0.2s ease-in-out;

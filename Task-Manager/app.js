@@ -1,10 +1,11 @@
-let cardSelezionata = null; // Variabile per salvare la card selezionata
+let cardSelezionata = null; // Variabile per salvare la card selezionata per modifica/eliminazione
 
+// Funzione per la ricerca delle attività
 function ricerca() {
     // Ottieni il valore dell'input di ricerca
     const valoreRicerca = document.getElementById("ricerca").value.toLowerCase();
 
-    // Ottieni tutte le card
+    // Ottieni tutte le card delle attività
     const cards = Array.from(document.querySelectorAll(".contenutoCard .col"));
 
     // Ordina le card in base alla corrispondenza con il valore di ricerca
@@ -27,6 +28,7 @@ function ricerca() {
     cardsOrdinate.forEach(card => contenutoCard.appendChild(card));
 }
 
+// Funzione per creare o modificare un'attività
 function creaAttivita() {
     document.getElementById("crea-modificaButton").textContent = "Crea"; // Cambia il testo del pulsante
 
@@ -41,7 +43,7 @@ function creaAttivita() {
         return;
     }
 
-    // Controlla lo stato dell'attività e assegna una classe corrispondente
+    // Assegna uno stile diverso in base allo stato dell'attività
     let classeStato = "";
     if (statoAttivita === "daFare") {
         classeStato = "box-shadow: 0 0 10px rgb(223, 85, 85);";
@@ -60,7 +62,7 @@ function creaAttivita() {
         // Resetta la variabile cardSelezionata
         cardSelezionata = null;
     } else {
-        // Crea una nuova card
+        // Crea una nuova card attività
         const nuovaCard = document.createElement("div");
         nuovaCard.classList.add("col");
         nuovaCard.innerHTML = `
@@ -75,7 +77,7 @@ function creaAttivita() {
             </div>
         `;
 
-        // Aggiungi la nuova card alla sezione delle attività
+        // Aggiungi la nuova card al contenitore
         const contenutoCard = document.querySelector(".contenutoCard .row");
         contenutoCard.appendChild(nuovaCard);
     }
@@ -86,6 +88,7 @@ function creaAttivita() {
     document.getElementById("opzioniAttivita").value = "daFare";
 }
 
+// Apre il modal di modifica e carica i dati della card selezionata
 function openModalModifica(button) {
     document.getElementById("crea-modificaButton").textContent = "Modifica"; // Cambia il testo del pulsante
     // Salva la card selezionata
@@ -99,7 +102,7 @@ function openModalModifica(button) {
     document.getElementById("nomeAttivita").value = nomeAttivita;
     document.getElementById("descrizioneAttivita").value = descrizioneAttivita;
 
-    // Imposta lo stato dell'attività nel modal
+    // Imposta lo stato dell'attività nel modal in base al colore della box-shadow
     const statoAttivita = cardSelezionata.querySelector(".card").style.boxShadow;
     if (statoAttivita.includes("rgb(223, 85, 85)")) {
         document.getElementById("opzioniAttivita").value = "daFare";
@@ -110,11 +113,12 @@ function openModalModifica(button) {
     }
 }
 
+// Apre il modal di eliminazione e salva la card selezionata
 function openModalElimina(button) {
-    // Salva la card selezionata
     cardSelezionata = button.closest('.col');
 }
 
+// Elimina la card selezionata
 function eliminaAttivita() {
     if (cardSelezionata) {
         cardSelezionata.remove(); // Rimuove la card dal DOM
@@ -122,6 +126,7 @@ function eliminaAttivita() {
     }
 }
 
+// Filtra le attività in base allo stato selezionato
 function filtraStato() {
     // Ottieni il valore selezionato dal menu a tendina
     const statoSelezionato = document.getElementById("filtroStato").value;
