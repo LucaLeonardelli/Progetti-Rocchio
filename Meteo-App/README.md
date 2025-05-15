@@ -37,6 +37,18 @@ o per una località specifica, inserendo latitudine e longitudine. L'obiettivo p
      - Velocità del vento (in km/h).
      - Icone che rappresentano le condizioni atmosferiche (es. sole, pioggia, neve).
 
+## Perché viene utilizzato `geolocation` in `navigator`?
+
+Per offrire all’utente la possibilità di visualizzare le condizioni meteo della propria posizione attuale in modo automatico, l’app utilizza la funzionalità di **geolocalizzazione** fornita dai browser moderni tramite l’oggetto `navigator.geolocation`. Questo permette di ottenere le coordinate (latitudine e longitudine) dell’utente senza che debba inserirle manualmente.
+
+### Come funziona
+
+Quando la pagina viene caricata, viene chiamato il metodo `navigator.geolocation.getCurrentPosition()`. Questo metodo chiede all’utente il permesso di accedere alla posizione. Se l’utente accetta, il browser restituisce le coordinate geografiche correnti. Queste coordinate vengono poi utilizzate per effettuare una chiamata all’API di Open-Meteo, che restituisce le condizioni meteo aggiornate per quella posizione.
+
+In sintesi:
+- **Vantaggio**: L’utente può vedere subito il meteo della propria posizione senza inserire dati.
+- **Funzionamento**: Il browser chiede il permesso, ottiene le coordinate e aggiorna automaticamente la sezione meteo della posizione attuale.
+
 ## Struttura del Progetto
 
 - **index.html**: File principale che contiene la struttura dell'app.
