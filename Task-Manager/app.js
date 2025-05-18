@@ -2,30 +2,17 @@ let cardSelezionata = null; // Variabile per salvare la card selezionata per mod
 
 // Funzione per la ricerca delle attività
 function ricerca() {
-    // Ottieni il valore dell'input di ricerca
     const valoreRicerca = document.getElementById("ricerca").value.toLowerCase();
-
-    // Ottieni tutte le card delle attività
     const cards = Array.from(document.querySelectorAll(".contenutoCard .col"));
 
-    // Ordina le card in base alla corrispondenza con il valore di ricerca
-    const cardsOrdinate = cards.sort((a, b) => {
-        const nomeA = a.querySelector(".nomeAttivita").textContent.toLowerCase();
-        const nomeB = b.querySelector(".nomeAttivita").textContent.toLowerCase();
-
-        // Card che corrispondono meglio al valore di ricerca vengono messe prima
-        const matchA = nomeA.includes(valoreRicerca) ? 1 : 0;
-        const matchB = nomeB.includes(valoreRicerca) ? 1 : 0;
-
-        return matchB - matchA; // Ordina in base alla corrispondenza
+    cards.forEach(card => {
+        const nome = card.querySelector(".nomeAttivita").textContent.toLowerCase();
+        if (nome.includes(valoreRicerca) || valoreRicerca === "") {
+            card.style.display = "";
+        } else {
+            card.style.display = "none";
+        }
     });
-
-    // Rimuovi tutte le card dal contenitore
-    const contenutoCard = document.querySelector(".contenutoCard .row");
-    contenutoCard.innerHTML = "";
-
-    // Riaggiungi le card ordinate
-    cardsOrdinate.forEach(card => contenutoCard.appendChild(card));
 }
 
 // Funzione per creare o modificare un'attività
